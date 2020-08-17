@@ -1,0 +1,15 @@
+RUN
+{
+ALLOCATE CHANNEL c1 DEVICE TYPE sbt
+PARMS 'SBT_LIBRARY=/u01/app/oracle/product/12.1.0.2/db_1/lib/libsbt_<6 or 7>_linux-x86_64.so,
+SBT_PARMS=(mount_path=192.0.2.1:/SbtIdd/SbtView1/fs,mount_point=/tmp/mnt81,channel=c1,vips=192.0.2.2,gflag-name=sbt_use_grpc,gflag-value=true)'; <==gflags only if IPv6 disabled
+ALLOCATE CHANNEL c2 DEVICE TYPE sbt
+PARMS 'SBT_LIBRARY=/u01/app/oracle/product/12.1.0.2/db_1/lib/libobk.so,    
+SBT_PARMS=(mount_path=192.0.2.1:/SbtIdd/SbtView1/fs,mount_point=/tmp/mnt81,channel=c2,vips=192.0.2.3,gflag-name=sbt_use_grpc,gflag-value=true)'; <==gflags only if IPv6 disabled
+backup datafile 7,8 format 'bkp_dir/%U';
+backup database format ‘bkp_dir/%U’;
+RUN
+{
+#RESTORE SPFILE TO PFILE '/tmp/test_restore.f';
+restore controlfile to '/tmp/restore.1';
+}

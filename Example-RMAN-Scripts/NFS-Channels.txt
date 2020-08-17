@@ -1,0 +1,7 @@
+run {
+allocate channel mnt32 device type disk format='/home/oracle/mnt/%d_%T_%s_%p_%d_FULL';
+allocate channel mnt33 device type disk format='/home/oracle/mnt2/%d_%T_%s_%p_%d_FULL';
+backup database;
+release channel mnt32;
+release channel mnt33;
+ }

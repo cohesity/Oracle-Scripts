@@ -1,0 +1,5 @@
+
+
+sudo mount -t nfs -o noatime,vers=3,proto=tcp,rsize=524288,wsize=524288,timeo=10000,hard,intr,nolock 10.2.161.32:/oracle_dataset01  /home/oracle/mnt32
+
+sudo mount -t nfs -o noatime,vers=3,proto=tcp,rsize=524288,wsize=524288,timeo=10000,hard,intr,nolock 10.2.161.33:/oracle_dataset01  /home/oracle/mnt33

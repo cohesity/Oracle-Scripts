@@ -1,0 +1,9 @@
+RUN 
+{
+CONFIGURE DEVICE type sbt PARALLELISM 1;
+ALLOCATE CHANNEL c1 DEVICE TYPE sbt
+PARMS
+'SBT_LIBRARY=/u01/app/oracle/product/12.1.0.2/db_1/lib/libsbt_<6 or 7>_linux-x86_64.so,
+SBT_PARMS=(mount_path=192.0.2.0:/SbtIdd/SbtView1/fs,mount_point=/tmp/mnt83,channel=c3,vips=192.0.2.1,gflag-name=sbt_use_grpc,gflag-value=true)'; <==gflags only if IPv6 disabled
+backup incremental level = 1 filesperset = 4 database;
+}
