@@ -1,1 +1,1 @@
-Warning: this code is provided on a best effort basis and is not in any way officially supported or sanctioned by Cohesity. The code in this repository is provided as-is and the author accepts no liability for damages resulting from its use.
+Warning: These examples are provided on a best effort basis and is not in any way officially supported or sanctioned by Cohesity. The examples in this repository are provided as-is and the author accepts no liability for damages resulting from its use.
